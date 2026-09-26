@@ -1,0 +1,111 @@
+\documentclass[11pt]{article}
+\usepackage[margin=.8in]{geometry}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor,enumitem,listings}
+\usepackage[american]{circuitikz}
+\usepackage{fancyhdr,lastpage,hyperref}
+\usepackage{subfiles}
+
+\definecolor{noteblue}{RGB}{35,90,150}
+\definecolor{notegreen}{RGB}{40,120,80}
+\definecolor{notered}{RGB}{170,60,60}
+\definecolor{notegray}{RGB}{246,247,249}
+\newcommand{\coursename}{CS / EE XXX}
+\newcommand{\coursetitle}{Course Name}
+\newcommand{\lecturenum}{}
+\newcommand{\lecturetitle}{}
+\newcommand{\lecturedate}{}
+\pagestyle{fancy}\fancyhf{}\lhead{\textbf{\coursename}}\rhead{Lecture \lecturenum}
+\lfoot{\lecturetitle}\rfoot{\thepage/\pageref{LastPage}}\setlength{\headheight}{14pt}
+\hypersetup{colorlinks=true,linkcolor=noteblue,urlcolor=noteblue}
+% Reference style: flat tinted blocks with a single colored left rule.
+\tcbset{
+  note block/.style={
+    enhanced,breakable,frame hidden,boxrule=0pt,arc=0pt,
+    sharp corners,boxsep=0pt,left=10pt,right=10pt,
+    top=7pt,bottom=7pt,borderline west={2pt}{0pt}{#1},
+    before skip=10pt,after skip=10pt
+  }
+}
+\newtcolorbox{definitionbox}[1][]{
+  note block=notegreen,colback=notegreen!6,
+  before upper={\textbf{\textcolor{notegreen}{Definition #1}}\enspace}
+}
+\newtcolorbox{examplebox}[1][]{
+  note block=noteblue,colback=noteblue!5,
+  before upper={\textbf{\textcolor{noteblue}{Example #1}}\enspace}
+}
+\newtcolorbox{importantbox}{
+  note block=notered,colback=notered!6,
+  before upper={\textbf{\textcolor{notered}{Important.}}\enspace}
+}
+\newtcolorbox{questionbox}{
+  note block=black!65,colback=black!3,
+  before upper={\textbf{Question / Review.}\enspace}
+}
+% IntelliJ IDEA light editor palette. Use [Java], [Python], etc. to switch language.
+\definecolor{ideaEditor}{HTML}{FFFFFF}
+\definecolor{ideaChrome}{HTML}{F2F3F5}
+\definecolor{ideaBorder}{HTML}{D9DEE3}
+\definecolor{ideaForeground}{HTML}{1F2329}
+\definecolor{ideaKeyword}{HTML}{0033B3}
+\definecolor{ideaString}{HTML}{067D17}
+\definecolor{ideaComment}{HTML}{8C8C8C}
+\definecolor{ideaNumber}{HTML}{1750EB}
+\definecolor{ideaMethod}{HTML}{00627A}
+\definecolor{ideaGutter}{HTML}{9AA0A6}
+
+% Usage: \begin{intellijcode}[C++]{sum.cpp} ... \end{intellijcode}
+% The optional language defaults to C++.
+\newtcblisting{intellijcode}[2][C++]{
+  enhanced,breakable,listing only,
+  colback=ideaEditor,colframe=ideaBorder,
+  colbacktitle=ideaChrome,coltitle=ideaForeground,
+  boxrule=.5pt,arc=2mm,
+  top=9pt,bottom=10pt,left=5pt,right=5pt,
+  title={\ttfamily\footnotesize\textcolor{ideaForeground}{#2}\hfill
+         \textcolor{ideaGutter}{#1}},
+  fonttitle=\normalfont,
+  listing options={
+    language=#1,
+    basicstyle=\ttfamily\small\color{ideaForeground},
+    keywordstyle=\color{ideaKeyword}\bfseries,
+    stringstyle=\color{ideaString},
+    commentstyle=\color{ideaComment}\itshape,
+    identifierstyle=\color{ideaForeground},
+    emph={sum},
+    emphstyle=\color{ideaMethod},
+    numbers=left,
+    numberstyle=\ttfamily\scriptsize\color{ideaGutter},
+    numbersep=14pt,
+    xleftmargin=19pt,
+    xrightmargin=4pt,
+    tabsize=4,
+    columns=fullflexible,
+    keepspaces=true,
+    showstringspaces=false,
+    breaklines=true,
+    literate={0}{{{\color{ideaNumber}0}}}1
+             {1}{{{\color{ideaNumber}1}}}1
+             {2}{{{\color{ideaNumber}2}}}1
+             {3}{{{\color{ideaNumber}3}}}1
+             {4}{{{\color{ideaNumber}4}}}1
+             {5}{{{\color{ideaNumber}5}}}1
+             {6}{{{\color{ideaNumber}6}}}1
+             {7}{{{\color{ideaNumber}7}}}1
+             {8}{{{\color{ideaNumber}8}}}1
+             {9}{{{\color{ideaNumber}9}}}1
+  }
+}
+\newcommand{\R}{\mathbb{R}}\newcommand{\N}{\mathbb{N}}\newcommand{\E}{\mathbb{E}}\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\TODO}[1]{\textcolor{notered}{\textbf{TODO:} #1}}
+\newcommand{\keyterm}[1]{\textbf{\textcolor{noteblue}{#1}}}
+
+% Change the course name/title above once for the whole quarter.
+% Add one \subfile line for each new lecture.
+\begin{document}
+\subfile{lectures/lecture01}
+\clearpage
+\subfile{lectures/lecture02}
+\end{document}

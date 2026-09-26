@@ -1,0 +1,38 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\gdef\lecturenum{02}
+\gdef\lecturetitle{Your Lecture Title}
+\gdef\lecturedate{\today}
+\setcounter{section}{0}
+
+\begin{center}
+{\Large\bfseries \coursename: \coursetitle}\\[3pt]
+{\large Lecture \lecturenum --- \lecturetitle}\\[3pt]
+\lecturedate
+\end{center}
+\vspace{.5em}\hrule\vspace{1em}
+
+\section{Overview}
+Write your lecture summary here.
+
+\section{Concepts}
+\begin{definitionbox}[--- Your Term]
+Write the definition here.
+\end{definitionbox}
+
+\begin{examplebox}[--- Your Example]
+Work through an example here.
+\end{examplebox}
+
+\section{Code}
+\begin{intellijcode}{example.cpp}
+int main() {
+    return 0;
+}
+\end{intellijcode}
+
+\section{Questions}
+\begin{questionbox}
+What should you review after class?
+\end{questionbox}
+\end{document}
