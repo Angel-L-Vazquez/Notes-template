@@ -6,7 +6,10 @@ A LaTeX template for my notes
 
 ### Linux
 Install the required packages:
-`texlive-latex texlive-binextra`
+
+```
+texlive-latex texlive-binextra
+```
 
 ### macOS
 Install [MacTex](https://tug.org/mactex/)
@@ -14,6 +17,9 @@ Install [MacTex](https://tug.org/mactex/)
 
 # Setup
 Compile using:
-`latexmk -xelatex main.tex`
+
+```
+Make
+```
 
 
