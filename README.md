@@ -16,6 +16,13 @@ Install [MacTex](https://tug.org/mactex/)
 
 
 # Setup
+Clone this repo:
+
+```
+git clone https://github.com/Angel-L-Vazquez/Notes-template.git
+```
+
+Make a copy of `template.tex` and modify
 Compile using:
 
 ```
